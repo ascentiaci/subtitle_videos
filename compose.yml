@@ -1,0 +1,6 @@
+services:
+  whisper:
+    build: .
+    volumes:
+      - ./models:/models
+      - ./data:/data
