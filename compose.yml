@@ -1,6 +1,12 @@
+version: '3.8'
+
 services:
   whisper:
     build: .
+    container_name: whisper
+    restart: always
     volumes:
       - ./models:/models
       - ./data:/data
+    ports:
+      - "5000:5000"  # Expose API inside the container
