@@ -15,6 +15,17 @@ log "Starting whisper_entrypoint.sh..."
 # Default value for file path
 FILE_PATH=""
 
+if [ ! -f /models/ggml-base.bin ]; then
+    log "Model file not found: /models/ggml-base.bin"
+    log "Downloading Model file"
+    sh /app/build/bin/download-ggml-model.sh base /models
+    log "Model file downloaded: /models/ggml-base.bin"
+else
+    log "Model file found: /models/ggml-base.bin"
+
+fi
+
+
 # Parse command-line arguments
 while [[ $# -gt 0 ]]; do
     case "$1" in

@@ -1,4 +1,4 @@
-FROM ghcr.io/ggerganov/whisper.cpp:main
+FROM ghcr.io/ggerganov/whisper.cpp:main-cuda
 
 RUN apt-get update && apt-get install -y \
     python3 \

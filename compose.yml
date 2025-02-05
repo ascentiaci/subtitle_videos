@@ -10,3 +10,11 @@ services:
       - ./data:/data
     ports:
       - "5000:5000"  # Expose API inside the container
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            capabilities: [gpu]
+            count: all
+
